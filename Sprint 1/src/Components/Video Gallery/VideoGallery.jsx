@@ -3,11 +3,12 @@ import React from 'react';
 function VideoGallery() {
  for(let i = 0; i < videoArr.length; i++) {
     return (
-        <div>
-            <div>
-                <div>{videoArr[i].img}</div>
-                <h3>{videoArr[i].title}</h3>
-                <h4>{videoArr[i].author}</h4>
+        <div className="gallery">
+            <h2 className="gallery__title">NEXT VIDEO</h2>
+            <div className="gallery__container">
+                <div className="gallery__video">{videoArr[i].img}</div>
+                <h3 className="gallery__title">{videoArr[i].title}</h3>
+                <h4 className="gallery__author">{videoArr[i].author}</h4>
             </div>
         </div>
     )
