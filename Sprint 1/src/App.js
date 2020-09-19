@@ -7,6 +7,7 @@ import Videos from './Components/Video Gallery/VideoGallery';
 import Comments from './Components/Comments/Comments';
 import CommForm from './Components/CommForm/commForm';
 import MediaPlayer from './Components/MediaPlayer/MediaPlayer';
+import NextVideo from './Components/NextVideo/NextVideo';
 import Video1 from './Assets/Images/video-list-0.jpg';
 import Video2 from './Assets/Images/video-list-1.jpg';
 import Video3 from './Assets/Images/video-list-2.jpg';
@@ -136,6 +137,7 @@ class App extends React.Component {
             date={comment.date}
             />
         })}
+        <NextVideo />
         {this.state.videos.filter(video => video.id !== this.state.mainVideo.id)
         .map(video => {
           return <Videos

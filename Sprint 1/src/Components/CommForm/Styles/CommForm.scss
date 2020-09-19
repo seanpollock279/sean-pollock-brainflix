@@ -1,0 +1,52 @@
+.form {
+
+    &__label {
+        font-family: Avenir;
+        color: black;
+        padding-left: 5vw;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    &__title {
+        font-family: Avenir;
+        color: grey;
+        padding-left: 5vw;
+        font-size: 1rem;
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-start; 
+    }
+
+    &__input {
+        border: 3px solid #0095FF;
+        width: 90%;
+        height: 6vh;
+        border-radius: 8px;
+        margin-bottom: 2vh;
+        margin-top: 1vh;
+    }
+
+    &__btn {
+        color: white;
+        background-color: #0095FF;
+        width: 93%;
+        height: 6vh;
+        font-family: Avenir;
+        font-size: 0.825rem;
+        border: 3px solid #0095FF;
+        border-radius: 8px;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    &__divider {
+        width: 90%;
+        color: grey;
+        size: 1px;
+        margin: 2vh 0;
+        margin-left: 5vw;
+    }
+}

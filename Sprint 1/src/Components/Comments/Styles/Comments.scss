@@ -1,0 +1,50 @@
+.comments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5vw;
+    width: 73vw;
+
+    &__img {
+        background-color: grey;
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        margin-top: 1vh;
+    }
+
+    &__name {
+        font-family: Avenir;
+        color: black;
+        margin: 0;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    &__date {
+        font-family: Avenir;
+        color: grey;
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin: 1vh;
+    }
+
+    &__text {
+        text-align: left;
+        font-family: Avenir;
+        color: grey;
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin: 0;
+        padding-left: 10vw;
+    }
+
+    &__divider {
+        width: 93%;
+        color: grey;
+        size: 1px;
+        margin: 2vh 0;
+        margin-left: 1vw;
+    }
+}

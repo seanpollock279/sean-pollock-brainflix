@@ -1,0 +1,68 @@
+.info {
+
+    &__title {
+        text-align: left;
+        padding-left: 5vw;
+        margin: 0;
+    }
+
+    &__divider {
+        padding-left: 5vw;
+        color: #E1E1E1;
+        width: 90%;
+    }
+
+    .info-containerTop {
+        display: flex;
+
+        &__author {
+            text-align: left;
+            padding-left: 5vw;
+            margin: 0;
+        }
+
+        &__date {
+            color: #AFAFAF;
+            padding-left: 2vw;
+            margin: 0;
+        }
+    }
+
+    .info-data {
+        display: flex;
+        align-items: center;
+    }
+
+    .info-containerMiddle {
+        display: flex;
+        padding-left: 5vw;
+        align-items: center;
+
+        &__views {
+            width: 30%;
+            height: 15%;
+        }
+
+        &__label {
+            padding-left: 2vw;
+        }
+    }
+
+    .info-containerBottom {
+        display: flex;
+        padding-left: 5vw;
+        align-items: center;
+
+        &__likes {
+            width: 30%;
+            height: 15%;
+        }
+
+        &__label {
+            padding-left: 2vw;
+        }
+    }
+
+    
+
+}

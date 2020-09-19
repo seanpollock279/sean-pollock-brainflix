@@ -1,0 +1,31 @@
+.header {
+    // display: flex;
+
+    &__logo {
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+    }
+
+    &__search {
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        width: 80%;
+    }
+
+    &__button {
+        color: white;
+        background-color: #0095FF;
+        width: 60%;
+        height: 40%;
+        border: 1px solid #0095FF;
+        border-radius: 5px;
+        margin-bottom: 2vh;
+    }
+    
+    &__img {
+        // background-image: 
+        background-color: grey;
+        border: 1px solid grey;
+
+    }
+}
