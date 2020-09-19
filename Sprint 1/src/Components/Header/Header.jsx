@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../4.0 - Assets/Logo/Logo-brainflix.png';
-import search from '../../4.0 - Assets/Icons/PNG/Icon-search.png';
-import upload from '../../4.0 - Assets/Icons/PNG/Icon-upload.png';
+import logo from '../../Assets/Logo/Logo-brainflix.png';
+import search from '../../Assets/Icons/PNG/Icon-search.png';
+import upload from '../../Assets/Icons/PNG/Icon-upload.png';
 
 function Header() {
     return (

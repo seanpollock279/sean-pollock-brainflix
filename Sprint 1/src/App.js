@@ -55,6 +55,13 @@ class App extends React.Component {
       id: 1
     },
     {
+      src: Video1,
+      alt: '',
+      title: '',
+      author: '',
+      id: 10
+    },
+    {
       src: Video3,
       alt: 'video3',
       title: 'Les Houches The Hidden Gem Of The Chamonix',
@@ -129,7 +136,8 @@ class App extends React.Component {
             date={comment.date}
             />
         })}
-        {this.state.videos.map(video => {
+        {this.state.videos.filter(video => video.id !== this.state.mainVideo.id)
+        .map(video => {
           return <Videos
             key={video.id}
             videosId={video.id}

@@ -1,14 +1,14 @@
 import React from 'react';
-import Play from '../../4.0 - Assets/Icons/PNG/Icon-play.png';
-import FullScreen from '../../4.0 - Assets/Icons/PNG/Icon-fullscreen.png';
-import Volume from '../../4.0 - Assets/Icons/PNG/Icon-volume.png';
+import Play from '../../Assets/Icons/PNG/Icon-play.png';
+import FullScreen from '../../Assets/Icons/PNG/Icon-fullscreen.png';
+import Volume from '../../Assets/Icons/PNG/Icon-volume.png';
 
 export default function MediaPlayer(props) {
     return (
         <div className="media">
             <div>
                 <video className="media__video"
-                src={props.videoSrc} 
+                poster={props.videoSrc} 
                 alt={props.altText}
                 />
             </div>

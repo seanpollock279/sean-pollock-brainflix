@@ -7,7 +7,7 @@ export default function Videos(props) {
             <div className="gallery__container">
                 <video 
                     className="gallery__video"
-                    src={props.videoSrc}
+                    poster={props.videoSrc}
                     alt={props.altText} 
                 />
                 <h3 className="gallery__title">{props.videoTitle}</h3>

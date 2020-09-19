@@ -1,6 +1,6 @@
 import React from 'react';
-import Views from '../../4.0 - Assets/Icons/PNG/Icon-views.png';
-import Likes from '../../4.0 - Assets/Icons/PNG/Icon-likes.png';
+import Views from '../../Assets/Icons/PNG/Icon-views.png';
+import Likes from '../../Assets/Icons/PNG/Icon-likes.png';
 
 function Info() {
     return(
