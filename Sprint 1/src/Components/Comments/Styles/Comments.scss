@@ -1,10 +1,7 @@
 .comments {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 5vw;
-    width: 73vw;
+    align-items: flex-start;
+    margin-right: 0;
 
     &__img {
         background-color: grey;
@@ -12,6 +9,15 @@
         width: 5vh;
         border-radius: 50%;
         margin-top: 1vh;
+        margin-left: 7vw;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 74vw;
+        padding-left: 3vw;
     }
 
     &__name {
@@ -27,7 +33,7 @@
         color: grey;
         font-size: 0.875rem;
         font-weight: 400;
-        margin: 1vh;
+        margin: 0;
     }
 
     &__text {
@@ -37,14 +43,13 @@
         font-size: 0.875rem;
         font-weight: 400;
         margin: 0;
-        padding-left: 10vw;
+        padding-top: 1vh;
     }
-
-    &__divider {
-        width: 93%;
-        color: grey;
-        size: 1px;
-        margin: 2vh 0;
-        margin-left: 1vw;
-    }
+}
+.comments-divider {
+    width: 86%;
+    color: grey;
+    size: 1px;
+    margin: 2vh 0;
+    margin-left: 7vw;
 }

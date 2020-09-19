@@ -113,6 +113,10 @@ class App extends React.Component {
     }
 ]}
 
+// changeVideo = (video) => {
+//   this.setState({mainVideo: videos});
+// }
+
   render() {
     return (
       <div className="App">

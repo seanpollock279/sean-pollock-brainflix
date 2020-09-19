@@ -9,23 +9,42 @@
     &__search {
         border: 1px solid #e1e1e1;
         border-radius: 5px;
-        width: 80%;
+        width: 86%;
+        padding: 1vh 0;
+        height: 3vh;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        padding-left: 7vw;
+        margin-bottom: 2vh;
     }
 
     &__button {
         color: white;
         background-color: #0095FF;
-        width: 60%;
-        height: 40%;
-        border: 1px solid #0095FF;
-        border-radius: 5px;
-        margin-bottom: 2vh;
+        width: 78%;
+        height: 6vh;
+        font-family: Avenir;
+        font-size: 0.825rem;
+        font-weight: 800;
+        border: 3px solid #0095FF;
+        border-radius: 8px;
+        margin-top: 1vh;
+        margin-bottom: 0;
+        margin-right: 2vh;
+    }
+
+    &__plus {
+        padding-right: 2vh;
     }
     
     &__img {
-        // background-image: 
-        background-color: grey;
-        border: 1px solid grey;
-
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        object-fit: fill;
+        margin-top: 1vh;
     }
 }

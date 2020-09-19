@@ -1,12 +1,11 @@
 import React from 'react';
 import './Styles/NextVideo.scss';
 
-function NextVideo() {
+function NextVideo(props) {
     return (
         <div>
             <h2 className="next-video">NEXT VIDEO</h2>
-        </div>
-        
+        </div>  
     )
 }
 

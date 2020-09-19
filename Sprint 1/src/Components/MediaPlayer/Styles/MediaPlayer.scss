@@ -4,6 +4,11 @@
         width: 100%;
     }
 
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
     &__leftButton {
         background-color: black;
         opacity: 75%;  

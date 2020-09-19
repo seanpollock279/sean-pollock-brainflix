@@ -2,12 +2,15 @@
 
     &__title {
         text-align: left;
-        padding-left: 5vw;
+        padding-left: 7vw;
+        font-size: 1.25rem;
+        font-weight: 800;
         margin: 0;
+        font-family: Avenir;
     }
 
     &__divider {
-        padding-left: 5vw;
+        padding-left: vw;
         color: #E1E1E1;
         width: 90%;
     }
@@ -17,14 +20,21 @@
 
         &__author {
             text-align: left;
-            padding-left: 5vw;
+            padding-left: 7vw;
             margin: 0;
+            font-family: Avenir;
+            font-size: 1rem;
+            padding-top: 1.5vh;
         }
 
         &__date {
             color: #AFAFAF;
             padding-left: 2vw;
             margin: 0;
+            font-family: Avenir;
+            font-weight: 600;
+            padding-top: 1.5vh;
+            font-size: 1rem;
         }
     }
 
@@ -35,7 +45,7 @@
 
     .info-containerMiddle {
         display: flex;
-        padding-left: 5vw;
+        padding-left: 7vw;
         align-items: center;
 
         &__views {
@@ -45,12 +55,15 @@
 
         &__label {
             padding-left: 2vw;
+            font-family: Avenir;
+            font-weight: 400;
+            font-size: 1rem;
         }
     }
 
     .info-containerBottom {
         display: flex;
-        padding-left: 5vw;
+        padding-left: 7vw;
         align-items: center;
 
         &__likes {
@@ -60,6 +73,8 @@
 
         &__label {
             padding-left: 2vw;
+            font-weight: 400;
+            font-size: 1rem;
         }
     }
 
