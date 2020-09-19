@@ -17,18 +17,18 @@
 
     &__containerRight {
         align-items: center;
-        width: 50%;
+        width: 47%;
         text-align: left;
         height: 13vh;
-        padding-left: 1vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        padding-left: 2vw;
     }
 
     &__title {
         font-size: 0.9rem;
         margin: 0.5vh 0;
         font-family: Avenir;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__author {

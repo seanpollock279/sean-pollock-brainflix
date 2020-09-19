@@ -1,15 +1,17 @@
 .media {
+    position: relative;
 
     &__video {
         width: 100%;
     }
 
-    &__container {
+    &__containerIcons {
         display: flex;
         justify-content: space-evenly;
     }
 
     &__leftButton {
+        position: absolute;
         background-color: black;
         opacity: 75%;  
         border: 1px solid black; 
@@ -18,6 +20,8 @@
         padding-left: 1.5vh;
         padding-top: 1.1vh;
         padding-bottom: 1vh;  
+        bottom: 5%;
+        left: 5%;
     }
 
     &__leftButtonIcon {
@@ -25,12 +29,15 @@
     }
 
     &__centreButton {
+        position: absolute;
         background-color: black;
         opacity: 75%;  
         border: 1px solid black; 
         border-radius: 5px;
         width: 50%;
         padding: 1.45vh 0;
+        bottom: 5%;
+        left: 23.5%;
     }
 
     &__scrubber {
@@ -43,12 +50,19 @@
     }
 
     &__rightButton {
+        position: absolute;
         background-color: black;
         opacity: 75%;  
         border: 1px solid black; 
         border-radius: 5px;
-        width: 17%;
+        width: 20%;
         padding-top: 1.4vh;
         padding-bottom: 1vh;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    &__rightRightButtonIcon {
+        padding-left: 2.5vw;
     }
 }
