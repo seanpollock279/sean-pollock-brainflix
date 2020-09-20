@@ -1,3 +1,14 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
 .media {
     position: relative;
 
@@ -22,6 +33,10 @@
         padding-bottom: 1vh;  
         bottom: 5%;
         left: 5%;
+
+        @include tablet {
+            width: 8%;
+        }
     }
 
     &__leftButtonIcon {
@@ -38,15 +53,36 @@
         padding: 1.45vh 0;
         bottom: 5%;
         left: 23.5%;
+
+        @include tablet {
+            width: 67%;
+            margin-right: 10vw;
+            left: 15.5%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
     }
 
     &__scrubber {
         color: black;
         width: 90%;
+
+        @include tablet {
+            width: 80%;
+            margin-left: 2vw;
+        }
     }
 
     &__ticker {
         display: none;
+
+        @include tablet {
+            display: inline-block;
+            color: white;
+            padding-right: 1vw;
+            margin: 1.5vh;
+        }
     }
 
     &__rightButton {
@@ -60,6 +96,10 @@
         padding-bottom: 1vh;
         bottom: 5%;
         right: 5%;
+
+        @include tablet {
+            width: 10%;
+        }
     }
 
     &__rightRightButtonIcon {

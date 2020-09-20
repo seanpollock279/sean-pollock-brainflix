@@ -1,3 +1,14 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
 .info {
 
     &__title {
@@ -8,12 +19,30 @@
         margin: 0;
         font-family: Avenir;
         margin-top: 2vh;
+
+        @include tablet {
+            font-size: 2rem;
+            font-weight: 800;
+        }
     }
 
     &__divider {
         padding-left: vw;
         color: #E1E1E1;
         width: 90%;
+
+        @include tablet {
+            margin-left: 7vw;
+            width: 86%;
+        }
+    }
+
+    &__group {
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     .info-containerTop {
@@ -26,6 +55,10 @@
             font-family: Avenir;
             font-size: 1rem;
             padding-top: 1.5vh;
+
+            @include tablet {
+                font-size: 1.25rem;
+            }
         }
 
         &__date {
@@ -36,12 +69,22 @@
             font-weight: 600;
             padding-top: 2vh;
             font-size: 0.75rem;
+
+            @include tablet {
+                font-size: 1rem;
+                padding-top: 2vh;
+            }
         }
     }
 
     .info-data {
         display: flex;
         align-items: center;
+
+        @include tablet {
+            padding-right: 7vw;
+            margin-top: 1vh;
+        }
     }
 
     .info-containerMiddle {
@@ -59,6 +102,11 @@
             font-family: Avenir;
             font-weight: 400;
             font-size: 1rem;
+
+            @include tablet {
+                font-size: 1.25rem;
+                margin: 0;
+            }
         }
     }
 
@@ -67,18 +115,28 @@
         padding-left: 7vw;
         align-items: center;
 
+        @include tablet {
+            padding-left: 4vw;
+        }
+
         &__likes {
             width: 30%;
             height: 15%;
+
+            @include tablet {
+                margin-top: 0;
+            }
         }
 
         &__label {
             padding-left: 2vw;
             font-weight: 400;
             font-size: 1rem;
+
+            @include tablet {
+                font-size: 1.25rem;
+                margin: 0;
+            }
         }
     }
-
-    
-
 }

@@ -1,3 +1,14 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
 .form {
 
     .form-group {
@@ -12,6 +23,12 @@
         font-size: 1rem;
         text-align: left;
         margin-bottom: 1vh;
+
+        @include tablet {
+            margin-left: 7vw;
+            padding-left: 0;
+            margin-bottom: 2vh;
+        }
     }
 
     &__title {
@@ -29,6 +46,17 @@
         text-align: left;
         width: 77%;
         padding-left: 5vw;
+
+        @include tablet {
+            padding-left: 3vw;
+        }
+    }
+
+    &__boxes {
+
+        @include tablet {
+            display: flex;
+        }
     }
 
     &__input {
@@ -39,6 +67,12 @@
         margin-bottom: 1vh;
         margin-top: 1vh;
         padding-bottom: 7vh;
+
+        @include tablet {
+            padding-bottom: 0;
+            height: 5.5vh;
+            width: 93%;
+        }
     }
 
     input::placeholder {
@@ -49,6 +83,10 @@
         font-weight: 400;
         text-align: start;
         word-wrap: break-word;
+
+        @include tablet {
+            font-size: .85rem;
+        }
     }
 
     &__btn {
@@ -64,6 +102,11 @@
         margin-top: 1vh;
         margin-bottom: 0;
         padding: 1vh 0;
+
+        @include tablet {
+            width: 30%;
+            margin-left: 2vw;
+        }
     }
 
     &__img {
@@ -73,6 +116,10 @@
         object-fit: fill;
         margin-left: 7vw;
         margin-top: 5vh;
+
+        @include tablet {
+            margin-top: 4.5vh;
+        }
     }
 
     &__divider {

@@ -1,3 +1,14 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
 .comments {
     display: flex;
     align-items: flex-start;
@@ -18,6 +29,10 @@
         justify-content: space-between;
         width: 74vw;
         padding-left: 3vw;
+
+        @include tablet {
+            width: 80vw;
+        }
     }
 
     &__name {
@@ -34,6 +49,10 @@
         font-size: 0.875rem;
         font-weight: 400;
         margin: 0;
+
+        @include tablet {
+            margin-right: 55vw;
+        }
     }
 
     &__text {

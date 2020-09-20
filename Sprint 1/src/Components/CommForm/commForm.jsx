@@ -11,8 +11,10 @@ function CommForm() {
                 <img className="form__img" src={ProfilePic} alt=""/>
                 <div className="form__container">
                     <h3 className="form__title">Join the Conversation</h3>
-                    <input className="form__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."/>
-                    <button className="form__btn">COMMENT</button>
+                    <div className="form__boxes">
+                        <input className="form__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."/>
+                        <button className="form__btn">COMMENT</button>
+                    </div>
                 </div>
             </div>
             

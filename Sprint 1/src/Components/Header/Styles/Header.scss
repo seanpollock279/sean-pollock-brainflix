@@ -1,9 +1,30 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
 .header {
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     // display: flex;
 
     &__logo {
         padding-top: 2vh;
         padding-bottom: 1vh;
+
+        @include tablet {
+            padding-left: 7vw;
+        }
     }
 
     &__search {
@@ -12,6 +33,12 @@
         width: 86%;
         padding: 1vh 0;
         height: 3vh;
+
+        @include tablet {
+            margin-right: 2vw;
+            padding-right: 6vw;
+            width: 95%;
+        }
     }
 
     &__bottom {
@@ -19,6 +46,14 @@
         align-items: center;
         padding-left: 7vw;
         margin-bottom: 2vh;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            padding-right: 7vw;
+        }
     }
 
     &__button {
@@ -34,6 +69,12 @@
         margin-top: 1vh;
         margin-bottom: 0;
         margin-right: 2vh;
+
+        @include tablet {
+            margin-bottom: 1vh;
+            height: 5vh;
+            font-weight: 800;
+        }
     }
 
     &__plus {
@@ -46,5 +87,9 @@
         border-radius: 50%;
         object-fit: fill;
         margin-top: 1vh;
+
+        @include tablet {
+            margin-top: 0;
+        }
     }
 }
