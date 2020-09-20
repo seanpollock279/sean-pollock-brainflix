@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './app.scss';
 import Header from './Components/Header/Header';
 import Info from './Components/Info/info';
 import Description from './Components/Description/Description';
@@ -129,30 +130,36 @@ class App extends React.Component {
           videoAuthor={this.state.mainVideo.author}
           altText={this.state.mainVideo.alt}
         />
-        <Info />
-        <Description />
+        <div className="container">
+          <div className="container__left">
+            <Info />
+            <Description />
 
-        <CommForm />
-        {this.state.comments.map(comment => {
-          return <Comments 
-            key={comment.id}
-            userName={comment.name}
-            userText={comment.text}
-            date={comment.date}
-            />
-        })}
-        <NextVideo />
-        {this.state.videos.filter(video => video.id !== this.state.mainVideo.id)
-        .map(video => {
-          return <Videos
-            key={video.id}
-            videosId={video.id}
-            videoSrc={video.src}
-            altText={video.alt}
-            videoTitle={video.title}
-            videoAuthor={video.author}
-            />
-        })}
+            <CommForm />
+            {this.state.comments.map(comment => {
+              return <Comments 
+                key={comment.id}
+                userName={comment.name}
+                userText={comment.text}
+                date={comment.date}
+                />
+            })}
+          </div>
+          <div className="container__right">
+            <NextVideo />
+            {this.state.videos.filter(video => video.id !== this.state.mainVideo.id)
+            .map(video => {
+              return <Videos
+                key={video.id}
+                videosId={video.id}
+                videoSrc={video.src}
+                altText={video.alt}
+                videoTitle={video.title}
+                videoAuthor={video.author}
+                />
+            })}
+          </div>
+        </div>
       </div> 
     );
   }

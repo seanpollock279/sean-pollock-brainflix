@@ -13,6 +13,10 @@
     text-align: left;
     padding-left: 7vw;
 
+    @include desktop {
+        padding-left: 15vw;
+    }
+
     &__text {
         line-height: 3.5vh;
         font-size: 0.75rem;
@@ -21,6 +25,11 @@
         @include tablet {
             font-size: 1rem;
             width: 82%;
+        }
+
+        @include desktop {
+            width: 60%;
+            margin-right: 0;
         }
     }
 }

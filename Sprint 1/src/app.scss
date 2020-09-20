@@ -1,0 +1,28 @@
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+.container {
+
+    @include desktop {
+        display: flex;
+    }
+
+    &__left {
+
+        @include desktop {
+            width: 60%;
+        }
+    }
+
+    &__right {
+        width: 30%;
+    }
+}

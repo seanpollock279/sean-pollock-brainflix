@@ -21,4 +21,9 @@
         font-size: 1rem;
         font-weight: 800;
     }
+
+    @include desktop {
+        padding-left: 0;
+        margin-bottom: 1vh;
+    }
 } 

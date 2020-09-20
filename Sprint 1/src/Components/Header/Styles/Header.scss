@@ -16,6 +16,9 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    @include desktop {
+    }
     // display: flex;
 
     &__logo {
@@ -24,6 +27,10 @@
 
         @include tablet {
             padding-left: 7vw;
+        }
+
+        @include desktop {
+            padding-left: 15vw;
         }
     }
 
@@ -54,6 +61,10 @@
             margin-bottom: 0;
             padding-right: 7vw;
         }
+
+        @include desktop {
+            padding-right: 15vw;
+        }
     }
 
     &__button {
@@ -75,10 +86,18 @@
             height: 5vh;
             font-weight: 800;
         }
+
+        @include desktop {
+            font-size: 1rem;
+        }
     }
 
     &__plus {
         padding-right: 2vh;
+
+        @include desktop {
+            padding-right: 1vh;
+        }
     }
     
     &__img {

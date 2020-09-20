@@ -14,10 +14,18 @@
     flex-wrap: flex-wrap;
     align-items: center;
     margin-bottom: 3vh;
+
+    @include desktop {
+        margin-bottom: 0;
+    }
     
     &__containerLeft {
         text-align: left;
         padding-left: 7vw;
+
+        @include desktop {
+            padding-left: 0;
+        }
     }
     &__video {
         height: 12vh;
@@ -27,6 +35,11 @@
 
         @include tablet {
             width: 22vw;
+        }
+
+        @include desktop {
+            width: 13vw;
+            height: 8vh;
         }
     }
 
@@ -40,6 +53,10 @@
         @include tablet {
             width: 32%;
         }
+
+        @include desktop {
+            width: 70%;
+        }
     }
 
     &__title {
@@ -51,6 +68,11 @@
 
         @include tablet {
             font-size: 1.2rem;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+            padding-top: 2vh;
         }
     }
 
@@ -64,6 +86,12 @@
             font-size: 0.9rem;
             font-weight: 200;
             margin-top: 1.5vh;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+            margin-top: 0;
+            font-size: 0.75rem;
         }
     }
 }

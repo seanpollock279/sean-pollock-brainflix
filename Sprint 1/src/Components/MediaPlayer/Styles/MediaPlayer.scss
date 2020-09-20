@@ -12,8 +12,38 @@
 .media {
     position: relative;
 
+    &__containerTop {
+        @include tablet {
+
+            @include desktop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    &__bar {
+        display: none;
+
+        @include tablet {
+            display: none;
+
+            @include desktop {
+                background-color: black;
+                display: inline;
+                width: 20%;
+                padding: 18vh 0;
+            }
+        }
+    }
+
     &__video {
         width: 100%;
+
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &__containerIcons {
@@ -36,6 +66,12 @@
 
         @include tablet {
             width: 8%;
+        }
+
+        @include desktop {
+            left: 21%;
+            width: 6%;
+            bottom: 3%;
         }
     }
 
@@ -61,6 +97,12 @@
             display: flex;
             align-items: center;
             padding: 0;
+        }
+
+        @include desktop {
+            width: 40%;
+            left: 28%;
+            bottom: 3%;
         }
     }
 
@@ -100,9 +142,19 @@
         @include tablet {
             width: 10%;
         }
+
+        @include desktop {
+            right: 21%;
+            bottom: 3%;
+            width: 10%;
+        }
     }
 
     &__rightRightButtonIcon {
         padding-left: 2.5vw;
+
+        @include desktop {
+            padding-top: 0.1vh;
+        }
     }
 }

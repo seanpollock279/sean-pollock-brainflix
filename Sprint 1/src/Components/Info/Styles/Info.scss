@@ -24,6 +24,10 @@
             font-size: 2rem;
             font-weight: 800;
         }
+
+        @include desktop {
+            padding-left: 15vw;
+        }
     }
 
     &__divider {
@@ -59,6 +63,10 @@
             @include tablet {
                 font-size: 1.25rem;
             }
+
+            @include desktop {
+                padding-left: 15vw;
+            }
         }
 
         &__date {
@@ -84,6 +92,10 @@
         @include tablet {
             padding-right: 7vw;
             margin-top: 1vh;
+        }
+
+        @include desktop {
+            padding-right: 30vw;
         }
     }
 

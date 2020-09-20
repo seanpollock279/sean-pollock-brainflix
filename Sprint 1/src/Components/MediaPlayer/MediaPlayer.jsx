@@ -8,10 +8,12 @@ export default function MediaPlayer(props) {
     return (
         <div className="media">
             <div className="media__containerTop">
+                <div className="media__bar">bar1</div>
                 <video className="media__video"
                 poster={props.videoSrc} 
                 alt={props.altText}
                 />
+                <div className="media__bar">bar2</div>
             </div>
             {/* <div className="media__containerIcons"> */}
                 <button className="media__leftButton"><img className="media__leftButtonIcon"src={Play} alt=""/></button>
