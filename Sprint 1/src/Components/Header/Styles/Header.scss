@@ -1,13 +1,16 @@
+@import '../../../Styles/variables';
+
 @mixin tablet {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet-breakpoint) {
         @content;
     }
 }
 @mixin desktop {
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: $desktop-breakpoint) {
         @content;
     }
 }
+
 
 .header {
 
@@ -16,10 +19,6 @@
         align-items: center;
         justify-content: space-between;
     }
-
-    @include desktop {
-    }
-    // display: flex;
 
     &__logo {
         padding-top: 2vh;
@@ -30,7 +29,7 @@
         }
 
         @include desktop {
-            padding-left: 15vw;
+            padding-left: 10vw;
         }
     }
 
@@ -49,9 +48,8 @@
     }
 
     &__bottom {
-        display: flex;
         align-items: center;
-        padding-left: 7vw;
+        padding-left: 0;
         margin-bottom: 2vh;
 
         @include tablet {
@@ -63,19 +61,19 @@
         }
 
         @include desktop {
-            padding-right: 15vw;
+            padding-right: 10vw;
         }
     }
 
     &__button {
         color: white;
-        background-color: #0095FF;
+        background-color: $brainflix;
         width: 78%;
         height: 6vh;
         font-family: Avenir;
         font-size: 0.825rem;
         font-weight: 800;
-        border: 3px solid #0095FF;
+        border: 3px solid $brainflix;
         border-radius: 8px;
         margin-top: 1vh;
         margin-bottom: 0;

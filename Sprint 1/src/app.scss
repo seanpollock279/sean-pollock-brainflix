@@ -18,11 +18,16 @@
     &__left {
 
         @include desktop {
-            width: 60%;
+            width: 70%;
+            margin: 0;
         }
     }
 
     &__right {
-        width: 30%;
+
+        @include desktop {
+            width: 30%;
+        }
+        
     }
 }

@@ -11,8 +11,8 @@ function Header() {
             <img className="header__logo" src={logo} alt="logo"/>
             <div className="header__bottom">
                 <input className="header__search" type="text" placeholder="Seach"/>
-                <button className="header__button" type="submit"><img className="header__plus" src={upload} alt="" />UPLOAD</button>
-                <img className="header__img" src={ProfilePic} alt=""/>
+                    <button className="header__button" type="submit"><img className="header__plus" src={upload} alt="" />UPLOAD</button>
+                    <img className="header__img" src={ProfilePic} alt=""/>
             </div>
         </div>
     )

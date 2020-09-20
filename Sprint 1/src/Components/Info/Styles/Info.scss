@@ -1,10 +1,12 @@
+@import '../../../Styles/variables';
+
 @mixin tablet {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet-breakpoint) {
         @content;
     }
 }
 @mixin desktop {
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: $desktop-breakpoint) {
         @content;
     }
 }
@@ -26,7 +28,7 @@
         }
 
         @include desktop {
-            padding-left: 15vw;
+            padding-left: 10vw;
         }
     }
 
@@ -38,6 +40,13 @@
         @include tablet {
             margin-left: 7vw;
             width: 86%;
+        }
+
+        @include desktop {
+            margin-left: 10vw;
+            width: 74%;
+            margin-top: 2vh;
+            margin-right: 0;
         }
     }
 
@@ -65,7 +74,7 @@
             }
 
             @include desktop {
-                padding-left: 15vw;
+                padding-left: 10vw;
             }
         }
 
@@ -95,7 +104,7 @@
         }
 
         @include desktop {
-            padding-right: 30vw;
+            padding-right: 9vw;
         }
     }
 

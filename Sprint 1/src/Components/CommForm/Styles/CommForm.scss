@@ -1,10 +1,12 @@
+@import '../../../Styles/variables';
+
 @mixin tablet {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet-breakpoint) {
         @content;
     }
 }
 @mixin desktop {
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: $desktop-breakpoint) {
         @content;
     }
 }
@@ -16,7 +18,7 @@
         flex-wrap: flex-start;
 
         @include desktop {
-            margin-left: 8vw;
+            margin-left: 3vw;
         }
     }
 
@@ -35,7 +37,7 @@
         }
 
         @include desktop {
-            margin-left: 15vw;
+            margin-left: 10vw;
         }
     }
 
@@ -60,7 +62,7 @@
         }
 
         @include desktop {
-            width: 55%;
+            width: 67%;
         }
     }
 
@@ -72,7 +74,7 @@
     }
 
     &__input {
-        border: 3px solid #0095FF;
+        border: 3px solid $brainflix;
         width: 90%;
         height: 6vh;
         border-radius: 8px;
@@ -88,6 +90,7 @@
 
         @include desktop {
             height: 5vh;
+            width: 150%;
         }
     }
 
@@ -107,13 +110,13 @@
 
     &__btn {
         color: white;
-        background-color: #0095FF;
+        background-color: $brainflix;
         width: 93%;
         height: 6vh;
         font-family: Avenir;
         font-size: 0.825rem;
         font-weight: 800;
-        border: 3px solid #0095FF;
+        border: 3px solid $brainflix;
         border-radius: 8px;
         margin-top: 1vh;
         margin-bottom: 0;
@@ -127,6 +130,7 @@
         @include desktop {
             height: 5.5vh;
             font-size: 1rem;
+            width: 50%;
         }
     }
 
@@ -155,8 +159,9 @@
         margin-left: 7vw;
 
         @include desktop {
-            margin-left: 15vw;
-            width: 60%;
+            margin-left: 10vw;
+            width: 74%;
+            margin-right: 0;
         }
     }
 }
