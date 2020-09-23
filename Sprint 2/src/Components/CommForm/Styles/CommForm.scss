@@ -1,0 +1,167 @@
+@import '../../../Styles/variables';
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+.form {
+
+    .form-group {
+        display: flex;
+        flex-wrap: flex-start;
+
+        @include desktop {
+            margin-left: 3vw;
+        }
+    }
+
+    &__label {
+        font-family: Avenir;
+        color: black;
+        padding-left: 5vw;
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 1vh;
+
+        @include tablet {
+            margin-left: 7vw;
+            padding-left: 0;
+            margin-bottom: 2vh;
+        }
+
+        @include desktop {
+            margin-left: 10vw;
+        }
+    }
+
+    &__title {
+        font-family: Avenir;
+        color: grey;
+        padding-left: 0;
+        font-size: 1rem;
+        text-align: left;
+        margin: 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 77%;
+        padding-left: 5vw;
+
+        @include tablet {
+            padding-left: 3vw;
+        }
+
+        @include desktop {
+            width: 67%;
+        }
+    }
+
+    &__boxes {
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__input {
+        border: 3px solid $brainflix;
+        width: 90%;
+        height: 6vh;
+        border-radius: 8px;
+        margin-bottom: 1vh;
+        margin-top: 1vh;
+        padding-bottom: 7vh;
+
+        @include tablet {
+            padding-bottom: 0;
+            height: 5.5vh;
+            width: 93%;
+        }
+
+        @include desktop {
+            height: 5vh;
+            width: 150%;
+        }
+    }
+
+    input::placeholder {
+        padding-left: 1vw;
+        font-family: Avenir;
+        color: black;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: start;
+        word-wrap: break-word;
+
+        @include tablet {
+            font-size: .85rem;
+        }
+    }
+
+    &__btn {
+        color: white;
+        background-color: $brainflix;
+        width: 93%;
+        height: 6vh;
+        font-family: Avenir;
+        font-size: 0.825rem;
+        font-weight: 800;
+        border: 3px solid $brainflix;
+        border-radius: 8px;
+        margin-top: 1vh;
+        margin-bottom: 0;
+        padding: 1vh 0;
+
+        @include tablet {
+            width: 30%;
+            margin-left: 2vw;
+        }
+
+        @include desktop {
+            height: 5.5vh;
+            font-size: 1rem;
+            width: 50%;
+        }
+    }
+
+    &__img {
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        object-fit: fill;
+        margin-left: 7vw;
+        margin-top: 5vh;
+
+        @include tablet {
+            margin-top: 4.5vh;
+        }
+
+        @include desktop {
+            margin-top: 3.5vh;
+        }
+    }
+
+    &__divider {
+        width: 86%;
+        color: grey;
+        size: 1px;
+        margin: 2vh 0;
+        margin-left: 7vw;
+
+        @include desktop {
+            margin-left: 10vw;
+            width: 74%;
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import '../../../Styles/variables';
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+.next-video {
+    padding-left: 7vw;
+    text-align: left;
+    font-size: 0.75rem;
+    color: gray;
+    font-family: Avenir;
+    margin: 4vh 0;
+
+    @include tablet {
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    @include desktop {
+        padding-left: 0;
+        margin-bottom: 1vh;
+    }
+} 
