@@ -5,8 +5,8 @@ export default function Videos(props) {
     return (
         <div className="gallery">
             <div className="gallery__containerLeft">
-                <img className="gallery__video"
-                    src={props.videoSrc}
+                <video className="gallery__video"
+                    poster={props.videoSrc}
                     alt={props.altText} 
                 />
             </div>
