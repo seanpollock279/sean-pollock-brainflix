@@ -23,6 +23,7 @@
     &__logo {
         padding-top: 2vh;
         padding-bottom: 1vh;
+        margin-left: 0;
 
         @include tablet {
             padding-left: 7vw;
@@ -30,6 +31,7 @@
 
         @include desktop {
             padding-left: 10vw;
+            margin-left: 0;
         }
     }
 
@@ -39,11 +41,13 @@
         width: 86%;
         padding: 1vh 0;
         height: 3vh;
+        margin-left: 0;
 
         @include tablet {
             margin-right: 2vw;
             padding-right: 6vw;
             width: 95%;
+            margin-left: 5vw;
         }
     }
 
@@ -57,7 +61,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0;
-            padding-right: 0
+            padding-right: 7vw;
         }
 
         @include desktop {
@@ -82,7 +86,6 @@
 
         @include tablet {
             margin-bottom: 1vh;
-            width: 130%;
             height: 5vh;
             font-weight: 800;
             display: block;
@@ -112,8 +115,6 @@
         @include tablet {
             margin-top: 0;
             display: block;
-            margin-left: 5vw;
-            margin-right: 6vw;
         }
     }
 

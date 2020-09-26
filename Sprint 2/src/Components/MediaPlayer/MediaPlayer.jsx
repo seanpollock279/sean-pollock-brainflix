@@ -15,14 +15,12 @@ export default function MediaPlayer(props) {
                 />
                 <div className="media__bar">bar2</div>
             </div>
-            {/* <div className="media__containerIcons"> */}
                 <button className="media__leftButton"><img className="media__leftButtonIcon"src={Play} alt=""/></button>
                 <button className="media__centreButton">
                     <hr className="media__scrubber"/>
                     <p className="media__ticker">0:00/0:42</p>
                 </button>
                 <button className="media__rightButton"><img className="media__rightButtonIcon" src={FullScreen} alt=""/><img className="media__rightRightButtonIcon" src={Volume} alt=""/></button>
-            {/* </div> */}
         </div>
     )
 }

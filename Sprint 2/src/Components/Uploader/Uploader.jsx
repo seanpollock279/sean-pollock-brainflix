@@ -11,15 +11,15 @@ import './Styles/Uploader.scss';
 function Uploader () {
     return (
         <div>
-            <div className="header">
-                <Link to="/"><img className="header__logo" src={logo} alt="logo"/></Link>
-                <div className="header__bottom">
-                    <input className="header__search" type="text" placeholder="Seach"/>
-                        <Link to="/uploader"><button className="header__buttonTablet" type="submit"><img className="header__plusTablet" src={upload} alt="" />UPLOAD</button></Link> 
-                        <img className="header__imgTablet" src={ProfilePic} alt=""/>
-                    <div className='header__mobileContainer'>
-                        <Link to="/uploader"><button className="header__buttonMobile" type="submit"><img className="header__plusMobile" src={upload} alt="" />UPLOAD</button></Link> 
-                        <img className="header__imgMobile" src={ProfilePic} alt=""/>
+            <div className="uploadHeader">
+                <Link to="/"><img className="uploadHeader__headerLogo" src={logo} alt="logo"/></Link>
+                <div className="uploadHeader__headerBottom">
+                    <input className="uploadHeader__headerSearch" type="text" placeholder="Seach"/>
+                        <Link to="/uploader"><button className="uploadHeader__headerButtonTablet" type="submit"><img className="uploader__headerPlusTablet" src={upload} alt="" />UPLOAD</button></Link> 
+                        <img className="uploadHeader__headerImgTablet" src={ProfilePic} alt=""/>
+                    <div className='uploadHeader__headerMobileContainer'>
+                        <Link to="/uploader"><button className="uploadHeader__headerButtonMobile" type="submit"><img className="uploader__headerPlusMobile" src={upload} alt="" />UPLOAD</button></Link> 
+                        <img className="uploadHeader__headerImgMobile" src={ProfilePic} alt=""/>
                     </div>
                 </div>
             </div>

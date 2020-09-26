@@ -20,93 +20,80 @@ let commAccess = comments_url + api_key;
 class Home extends React.Component {
   state = {
       videos: [],
-      comments: []
+      heroVideo: []
   }
   
   componentDidMount() {
     axios.get(commAccess)
-    .then(res => {
-      res.data.map(info => {
-        let videos = {
-          video: info.image,
-          id: info.id,
-          title: info.title,
-          channel: info.channel,
-          description: info.description,
-          duration: info.duration,
-          likes: info.likes,
-          views: info.views,
-          timestamp: info.timestamp,
-        }
-        axios.get(`https://project-2-api.herokuapp.com/videos/${videos.id}/?api_key=` + api_key)
+      .then(res => {
+        axios.get(`https://project-2-api.herokuapp.com/videos/${res.data[0].id}/?api_key=` + api_key)
           .then(response => {
-            this.state.comments = response.data.comments.map(comm => {
-              return {
-              comment: comm.comment,
-              commId: comm.id,
-              name: comm.name,
-              timestamp: comm.timestamp
-            }
-          })
-        this.setState({ videos: [...this.state.videos, videos] });
-        })
-      })
-    })
-    .catch(err => {
-      console.log(err);
-    });
+              this.setState({
+                videos: res.data,
+                heroVideo: response.data
+              });
+            })
+            .catch(err => {
+              console.log(err);
+            });
+      }
+     
+    )
   }
-
+  
   render() {
-    return (
-      <div className="App">
-        <Header />
-        {/* <MediaPlayer 
-          key={this.state.videos[0].id}
-          videoId={this.state.videos[0].id}
-          videoSrc={this.state.videos[0].video}
-          videoTitle={this.state.videos[0].title}
-          videoAuthor={this.state.videos[0].channel}
-          altText={this.state.videos[0].title}
-        /> */}
-        <div className="container">
-          <div className="container__left">
-            <Info />
-            <Description />
+    
+    let hero = this.state.heroVideo;
 
-            <CommForm />
-            {this.state.comments.map(comm => {
-                console.log(comm);
-                return <Comments
-                key={comm.commId}
-                userName={comm.name}
-                userText={comm.comment}
-                date={comm.timestamp}
-                />
-              })
-              
-            }
-          </div>
-          <div className="container__right">
-            <NextVideo />
-            {this.state.videos
-            // might need to add a filter here first
-            .map(video => {
-              return <Videos
-                key={video.id}
-                videosId={video.id}
-                videoSrc={video.video}
-                altText={video.title}
-                videoTitle={video.title}
-                videoAuthor={video.channel}
-                />
-            })}
-          </div>
+    if (this.state.heroVideo.hasOwnProperty('comments')) {
+      return (
+        <div className="App">
+          <Header />
+          <MediaPlayer 
+              key={hero.id}
+              videoId={hero.id}
+              videoSrc={hero.video}
+              videoTitle={hero.title}
+              videoAuthor={hero.channel}
+              altText={hero.title}
+            />
+            <div className="container">
+              <div className="container__left">
+                <Info />
+                <Description />
+                <CommForm />
+                {this.state.videos.map(video => {
+                  video.comments.map(comm => {
+                    return <Comments
+                    key={comm.commId}
+                    userName={comm.name}
+                    userText={comm.comment}
+                    date={comm.timestamp}
+                    />
+                    })
+                  })
+                } 
+              <div className="container__right">
+                <NextVideo />
+                {this.state.videos
+                // might need to add a filter here first
+                .map(video => {
+                  return <Videos
+                    key={video.id}
+                    videosId={video.id}
+                    videoSrc={video.video}
+                    altText={video.title}
+                    videoTitle={video.title}
+                    videoAuthor={video.channel}
+                    />
+                })}
+              </div>
+            </div>  
         </div>
-      </div> 
-    );
-  }
+      );
+    }
 }
+
   
 
 export default Home;
