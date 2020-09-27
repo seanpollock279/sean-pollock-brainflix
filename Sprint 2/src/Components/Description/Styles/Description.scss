@@ -1,15 +1,4 @@
-@import '../../../Styles/variables';
-
-@mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-    }
-}
-@mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-    }
-}
+@import '../../../Styles/global.scss';
 
 .description {
     text-align: left;
@@ -22,7 +11,7 @@
     }
 
     &__text {
-        line-height: 3.5vh;
+        line-height: 2vh;
         font-size: 0.75rem;
         font-family: Avenir;
 
@@ -32,7 +21,7 @@
         }
 
         @include desktop {
-            width: 85%;
+            width: 90%;
             margin-right: 0;
         }
     }

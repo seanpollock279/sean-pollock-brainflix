@@ -12,7 +12,7 @@ function CommForm() {
                 <div className="form__container">
                     <h3 className="form__title">Join the Conversation</h3>
                     <div className="form__boxes">
-                        <input className="form__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."/>
+                        <textarea className="form__input" type="text" placeholder="That was easily the most spectacular BMX moment ever."/>
                         <button className="form__btn">COMMENT</button>
                     </div>
                 </div>

@@ -1,15 +1,4 @@
-@import '../../../Styles/variables';
-
-@mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-    }
-}
-@mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-    }
-}
+@import '../../../Styles/global.scss';
 
 .gallery {
     display: flex;
@@ -42,6 +31,7 @@
         @include desktop {
             width: 13vw;
             height: 8vh;
+            margin-top: 1vh;
         }
     }
 
@@ -59,6 +49,7 @@
         @include desktop {
             width: 70%;
             height: 9.5vh;
+            margin-top: 1vh;
         }
     }
 

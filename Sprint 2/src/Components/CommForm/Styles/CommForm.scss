@@ -1,15 +1,4 @@
-@import '../../../Styles/variables';
-
-@mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-    }
-}
-@mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-    }
-}
+@import '../../../Styles/global.scss';
 
 .form {
 
@@ -94,7 +83,7 @@
         }
     }
 
-    input::placeholder {
+    textarea::placeholder {
         padding-left: 1vw;
         font-family: Avenir;
         color: black;

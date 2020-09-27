@@ -9,7 +9,7 @@ import ProfilePic from '../../Assets/Images/Mohan-muruge.jpg';
 function Header() {
     return (
         <div className="header">
-            <Link to="/"><img className="header__logo" src={logo} alt="logo"/></Link>
+            <Link className="header__link" to="/"><img className="header__logo" src={logo} alt="logo"/></Link>
             <div className="header__bottom">
                 <input className="header__search" type="text" placeholder="Seach"/>
                     <Link to="/uploader"><button className="header__buttonTablet" type="submit"><img className="header__plusTablet" src={upload} alt="" />UPLOAD</button></Link> 

@@ -36,7 +36,7 @@ function Uploader () {
                     <label className="upForm__label" htmlFor="title">TITLE YOUR VIDEO</label><br className="upForm__br"/>
                     <input className="upForm__title" type="text" id="title" name="title" placeholder="Add a title to your video" /><br/>
                     <label className="upForm__labelTwo" htmlFor="description">ADD A VIDEO DESCRIPTION</label><br/>
-                    <input className="upForm__description" type="text" id="description" name="description"/>
+                    <textarea className="upForm__description" type="text" id="description" name="description" placeholder="Enter a description for your video" />
                 </form>
             </div>
             

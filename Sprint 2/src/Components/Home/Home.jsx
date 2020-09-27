@@ -54,6 +54,9 @@ class Home extends React.Component {
                 heroVideo: response.data
               });
           })
+          .catch(err => {
+            console.log(err);
+          });
       }
     )
   }  
