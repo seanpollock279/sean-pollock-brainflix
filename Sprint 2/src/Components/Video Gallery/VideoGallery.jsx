@@ -6,7 +6,7 @@ export default function Videos(props) {
     return (
         <div className="gallery">
             <div className="gallery__containerLeft">
-            <Link to="/"><video className="gallery__video"
+            <Link to={`/video/${props.videoId}`}><video className="gallery__video"
                     poster={props.videoSrc}
                     alt={props.altText} 
                 /></Link>

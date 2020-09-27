@@ -44,8 +44,14 @@
         width: 100%;
 
         @include desktop {
-            width: 70%;
+            max-width: 100%;
         }
+    }
+
+    &__video[poster] {
+        max-height: 43.5vh;
+        object-fit: cover;
+        
     }
 
     &__containerIcons {

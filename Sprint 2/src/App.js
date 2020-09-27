@@ -4,11 +4,12 @@ import './App.css';
 import Uploader from './Components/Uploader/Uploader';
 import Home from './Components/Home/Home';
 
-function App() {
+function App(props) {
   return (
     <div>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
+          <Route path="/video/:videoId" render={() => <Home />} />
           <Route path="/uploader" component={Uploader} />
         </Switch>
     </div>
