@@ -9,13 +9,13 @@ import ProfilePic from '../../Assets/Images/Mohan-muruge.jpg';
 function Header() {
     return (
         <div className="header">
-            <Link className="header__link" to="/"><img className="header__logo" src={logo} alt="logo"/></Link>
+            <Link to="/"><img className="header__logo" src={logo} alt="logo"/></Link>
             <div className="header__bottom">
                 <input className="header__search" type="text" placeholder="Seach"/>
-                    <Link to="/uploader"><button className="header__buttonTablet" type="submit"><img className="header__plusTablet" src={upload} alt="" />UPLOAD</button></Link> 
+                    <Link className="header__link" to="/uploader"><button className="header__buttonTablet" type="submit"><img className="header__plusTablet" src={upload} alt="" />UPLOAD</button></Link> 
                     <img className="header__imgTablet" src={ProfilePic} alt=""/>
                 <div className='header__mobileContainer'>
-                    <Link to="/uploader"><button className="header__buttonMobile" type="submit"><img className="header__plusMobile" src={upload} alt="" />UPLOAD</button></Link> 
+                    <Link className="header__link" to="/uploader"><button className="header__buttonMobile" type="submit"><img className="header__plusMobile" src={upload} alt="" />UPLOAD</button></Link> 
                     <img className="header__imgMobile" src={ProfilePic} alt=""/>
                 </div>
             </div>

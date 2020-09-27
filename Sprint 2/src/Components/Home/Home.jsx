@@ -4,14 +4,13 @@ import {withRouter} from 'react-router-dom';
 import '../../App.css';
 import '../../Home.scss';
 import Header from '../Header/Header';
-import Info from '../Info/info';
+import Info from '../Info/Info';
 import Description from '../Description/Description';
 import Videos from '../Video Gallery/VideoGallery';
 import Comments from '../Comments/Comments';
-import CommForm from '../CommForm/commForm';
+import CommForm from '../CommForm/CommForm';
 import MediaPlayer from '../MediaPlayer/MediaPlayer';
 import NextVideo from '../NextVideo/NextVideo';
-
 
 let videos_url ='https://project-2-api.herokuapp.com/videos/?api_key=';
 let api_key = '<fcdda4b1-8a54-4bbe-9edd-7df54c290151>';

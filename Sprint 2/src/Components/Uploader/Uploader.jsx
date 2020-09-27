@@ -7,7 +7,6 @@ import ProfilePic from '../../Assets/Images/Mohan-muruge.jpg';
 import ToUpload from '../../Assets/Images/Upload-video-preview.jpg';
 import './Styles/Uploader.scss';
 
-
 function Uploader () {
     return (
         <div>
@@ -15,10 +14,10 @@ function Uploader () {
                 <Link to="/"><img className="uploadHeader__headerLogo" src={logo} alt="logo"/></Link>
                 <div className="uploadHeader__headerBottom">
                     <input className="uploadHeader__headerSearch" type="text" placeholder="Seach"/>
-                        <Link to="/uploader"><button className="uploadHeader__headerButtonTablet" type="submit"><img className="uploader__headerPlusTablet" src={upload} alt="" />UPLOAD</button></Link> 
+                        <Link className="uploadHeader__link" to="/uploader"><button className="uploadHeader__headerButtonTablet" type="submit"><img className="uploader__headerPlusTablet" src={upload} alt="" />UPLOAD</button></Link> 
                         <img className="uploadHeader__headerImgTablet" src={ProfilePic} alt=""/>
                     <div className='uploadHeader__headerMobileContainer'>
-                        <Link to="/uploader"><button className="uploadHeader__headerButtonMobile" type="submit"><img className="uploader__headerPlusMobile" src={upload} alt="" />UPLOAD</button></Link> 
+                        <Link className="uploadHeader__link" to="/uploader"><button className="uploadHeader__headerButtonMobile" type="submit"><img className="uploader__headerPlusMobile" src={upload} alt="" />UPLOAD</button></Link> 
                         <img className="uploadHeader__headerImgMobile" src={ProfilePic} alt=""/>
                     </div>
                 </div>

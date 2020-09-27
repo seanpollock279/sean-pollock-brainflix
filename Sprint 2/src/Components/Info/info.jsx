@@ -12,7 +12,7 @@ function Info(props) {
                 <h2 className="info__title">{props.videoTitle}</h2>
                 <div className="info__group">
                     <div className="info-containerTop">
-                        <h3 className="info-containerTop__author">{props.videoChannel}</h3>
+                        <h3 className="info-containerTop__author">By {props.videoChannel}</h3>
                         <h3 className="info-containerTop__date">{newDateObj}</h3>
                     </div>
                     <div className="info-data">

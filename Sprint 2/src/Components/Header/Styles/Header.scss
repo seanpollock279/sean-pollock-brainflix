@@ -13,10 +13,6 @@ Link {
         justify-content: space-between;
     }
 
-    &__link {
-        text-decoration: none;
-    }
-
     &__logo {
         padding-top: 2vh;
         padding-bottom: 1vh;
@@ -108,6 +104,10 @@ Link {
             width: 120%;
             margin-right: 3vw;
         }
+    }
+
+    &__link {
+        text-decoration: none;
     }
 
     &__plusTablet {
