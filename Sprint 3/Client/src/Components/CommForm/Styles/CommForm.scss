@@ -1,0 +1,166 @@
+@import '../../../Styles/global.scss';
+
+.form {
+
+    @include desktop {
+        margin-bottom: 3vh;
+    }
+    .form-group {
+        display: flex;
+        flex-wrap: flex-start;
+
+        @include desktop {
+            margin-left: 1vw;
+        }
+    }
+
+    &__label {
+        font-family: Avenir;
+        color: black;
+        padding-left: 5vw;
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 1vh;
+
+        @include tablet {
+            margin-left: 7vw;
+            padding-left: 0;
+            margin-bottom: 2vh;
+        }
+
+        @include desktop {
+            margin-left: 8vw;
+        }
+    }
+
+    &__title {
+        font-family: Avenir;
+        color: grey;
+        padding-left: 0;
+        font-size: 1rem;
+        text-align: left;
+        margin: 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 77%;
+        padding-left: 5vw;
+
+        @include tablet {
+            padding-left: 3vw;
+        }
+
+        @include desktop {
+            width: 67%;
+            padding-left: 1vw;
+        }
+    }
+
+    &__boxes {
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__input {
+        border: 3px solid $brainflix;
+        width: 90%;
+        height: 6vh;
+        border-radius: 8px;
+        margin-bottom: 1vh;
+        margin-top: 1vh;
+        padding-bottom: 7vh;
+
+        @include tablet {
+            padding-bottom: 0;
+            height: 5.5vh;
+            width: 93%;
+        }
+
+        @include desktop {
+            height: 4vh;
+            width: 200%;
+        }
+    }
+
+    textarea::placeholder {
+        padding-left: 1vw;
+        font-family: Avenir;
+        color: black;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: start;
+        word-wrap: break-word;
+
+        @include tablet {
+            font-size: .85rem;
+            padding-top: 1vh;
+        }
+    }
+
+    &__btn {
+        color: white;
+        background-color: $brainflix;
+        width: 93%;
+        height: 6vh;
+        font-family: Avenir;
+        font-size: 0.825rem;
+        font-weight: 800;
+        border: 3px solid $brainflix;
+        border-radius: 8px;
+        margin-top: 1vh;
+        margin-bottom: 0;
+        padding: 1vh 0;
+
+        @include tablet {
+            width: 30%;
+            margin-left: 2vw;
+        }
+
+        @include desktop {
+            height: 4.75vh;
+            font-size: 1rem;
+            width: 95%;
+            margin-right: -7vw;
+        }
+    }
+
+    &__img {
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        object-fit: fill;
+        margin-left: 7vw;
+        margin-top: 5vh;
+
+        @include tablet {
+            margin-top: 4.5vh;
+        }
+
+        @include desktop {
+            margin-top: 3.5vh;
+            height: 4vh;
+            width: 4vw;
+        }
+    }
+
+    &__divider {
+        width: 86%;
+        color: grey;
+        size: 1px;
+        margin: 2vh 0;
+        margin-left: 7vw;
+
+        @include desktop {
+            margin-left: 8vw;
+            width: 85%;
+            margin-right: 0;
+            margin-top: 1vh;
+            display: none;
+        }
+    }
+}

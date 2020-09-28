@@ -1,0 +1,164 @@
+@import '../../../Styles/global.scss';
+
+.media {
+    position: relative;
+
+    &__containerTop {
+        @include tablet {
+
+            @include desktop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    &__bar {
+        display: none;
+
+        @include tablet {
+            display: none;
+
+            @include desktop {
+                background-color: black;
+                display: inline;
+                width: 20%;
+                padding: 21vh 0;
+            }
+        }
+    }
+
+    &__video {
+        width: 100%;
+
+        @include desktop {
+            max-width: 100%;
+        }
+    }
+
+    &__video[poster] {
+        max-height: 43.75vh;
+        object-fit: cover;
+        
+    }
+
+    &__containerIcons {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__leftButton {
+        position: absolute;
+        background-color: black;
+        opacity: 75%;  
+        border: 1px solid black; 
+        border-radius: 5px;
+        width: 17%;
+        padding-left: 1.5vh;
+        padding-top: 1.1vh;
+        padding-bottom: 1vh;  
+        bottom: 5%;
+        left: 5%;
+
+        @include tablet {
+            width: 8%;
+        }
+
+        @include desktop {
+            left: 16%;
+            width: 5%;
+            bottom: 3%;
+        }
+    }
+
+    &__leftButtonIcon {
+        width: 35%;
+
+        @include desktop {
+            padding-right: 0.5vw;
+        }
+    }
+
+    &__centreButton {
+        position: absolute;
+        background-color: black;
+        opacity: 75%;  
+        border: 1px solid black; 
+        border-radius: 5px;
+        width: 50%;
+        padding: 1.45vh 0;
+        bottom: 5%;
+        left: 23.5%;
+
+        @include tablet {
+            width: 67%;
+            margin-right: 10vw;
+            left: 15.5%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        @include desktop {
+            width: 53%;
+            left: 22%;
+            bottom: 3%;
+            height: 4.2vh;
+        }
+    }
+
+    &__scrubber {
+        width: 90%;
+        opacity: 100%;
+
+        @include tablet {
+            width: 85%;
+            margin-left: 2vw;
+        }
+    }
+
+    &__ticker {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            color: white;
+            padding-right: 1vw;
+            margin: 1.5vh;
+        }
+    }
+
+    &__rightButton {
+        position: absolute;
+        background-color: black;
+        opacity: 75%;  
+        border: 1px solid black; 
+        border-radius: 5px;
+        width: 20%;
+        padding-top: 1.4vh;
+        padding-bottom: 1vh;
+        bottom: 5%;
+        right: 5%;
+
+        @include tablet {
+            width: 10%;
+        }
+
+        @include desktop {
+            right: 16%;
+            bottom: 3%;
+            width: 8%;
+            padding-bottom: 1.2vh;
+            height: 4.2vh;
+        }
+    }
+
+    &__rightRightButtonIcon {
+        padding-left: 2.5vw;
+
+        @include desktop {
+            padding-top: 0;
+        }
+    }
+}

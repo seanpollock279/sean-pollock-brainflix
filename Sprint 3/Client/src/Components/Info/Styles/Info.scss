@@ -1,0 +1,169 @@
+@import '../../../Styles/global.scss';
+
+.info {
+
+    &__title {
+        text-align: left;
+        padding-left: 7vw;
+        font-size: 1rem;
+        font-weight: 800;
+        margin: 0;
+        font-family: Avenir;
+        margin-top: 2vh;
+
+        @include tablet {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        @include desktop {
+            padding-left: 8vw;
+        }
+    }
+
+    &__divider {
+        padding-left: vw;
+        color: #E1E1E1;
+        width: 90%;
+
+        @include tablet {
+            margin-left: 7vw;
+            width: 86%;
+        }
+
+        @include desktop {
+            margin-left: 8vw;
+            width: 85%;
+            margin-top: 2vh;
+            margin-right: 0;
+        }
+    }
+
+    &__group {
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .info-containerTop {
+        display: flex;
+
+        &__author {
+            text-align: left;
+            padding-left: 7vw;
+            margin: 0;
+            font-family: Avenir;
+            font-size: 1rem;
+            padding-top: 1.5vh;
+
+            @include tablet {
+                font-size: 1.25rem;
+            }
+
+            @include desktop {
+                padding-left: 8vw;
+                font-size: 1rem;
+                width: 9vw;
+            }
+        }
+
+        &__date {
+            color: #AFAFAF;
+            padding-left: 2vw;
+            margin: 0;
+            font-family: Avenir;
+            font-weight: 600;
+            padding-top: 2vh;
+            font-size: 0.75rem;
+
+            @include tablet {
+                font-size: 0.9rem;
+                padding-top: 2vh;
+            }
+
+            @include desktop {
+                padding-left: 0;
+                padding-top: 1.75vh;
+            }
+        }
+    }
+
+    .info-data {
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            padding-right: 7vw;
+            margin-top: 1vh;
+        }
+
+        @include desktop {
+            padding-right: 9vw;
+            margin-top: 2vh;
+            padding-left: 9vw;
+        }
+    }
+
+    .info-containerMiddle {
+        display: flex;
+        padding-left: 7vw;
+        align-items: center;
+
+        &__views {
+            width: 30%;
+            height: 15%;
+        }
+
+        &__label {
+            padding-left: 2vw;
+            font-family: Avenir;
+            font-weight: 400;
+            font-size: 1rem;
+
+            @include tablet {
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            @include desktop {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .info-containerBottom {
+        display: flex;
+        padding-left: 7vw;
+        align-items: center;
+
+        @include tablet {
+            padding-left: 4vw;
+        }
+
+        &__likes {
+            width: 30%;
+            height: 15%;
+
+            @include tablet {
+                margin-top: 0;
+            }
+        }
+
+        &__label {
+            padding-left: 2vw;
+            font-weight: 400;
+            font-size: 1rem;
+
+            @include tablet {
+                font-size: 1rem;
+                margin: 0;
+            }
+
+            @include desktop {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

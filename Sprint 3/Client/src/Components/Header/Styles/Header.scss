@@ -1,0 +1,178 @@
+@import '../../../Styles/global.scss';
+
+Link {
+    text-decoration: none;
+}
+
+
+.header {
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+        margin-left: 0;
+
+        @include tablet {
+            padding-left: 7vw;
+        }
+
+        @include desktop {
+            padding-left: 10vw;
+            margin-left: 0;
+        }
+    }
+
+    &__search {
+        border: 1px solid #e1e1e1;
+        border-radius: 5px;
+        width: 86%;
+        padding: 1vh 0;
+        height: 3vh;
+        margin-left: 0;
+
+        @include tablet {
+            margin-right: 2vw;
+            padding-right: 6vw;
+            width: 95%;
+            margin-left: 6vw;
+        }
+    }
+
+    input::placeholder {
+        padding-left: 1vw;
+        font-family: Avenir;
+        color: black;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: start;
+        word-wrap: break-word;
+
+        @include tablet {
+            font-size: .85rem;
+        }
+    }
+
+    &__bottom {
+        align-items: center;
+        padding-left: 0;
+        margin-bottom: 2vh;
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            padding-right: 7vw;
+        }
+
+        @include desktop {
+            padding-right: 8vw;
+        }
+    }
+
+    &__buttonTablet {
+        color: white;
+        background-color: $brainflix;
+        width: 78%;
+        height: 6vh;
+        font-family: Avenir;
+        font-size: 0.825rem;
+        font-weight: 800;
+        border: 3px solid $brainflix;
+        border-radius: 8px;
+        margin-top: 1vh;
+        margin-bottom: 0;
+        margin-right: 2vh;
+        display: none;
+
+        @include tablet {
+            margin-bottom: 1vh;
+            height: 5vh;
+            font-weight: 800;
+            display: block;
+            width: 120%;
+        }
+
+        @include desktop {
+            font-size: 1rem;
+            width: 120%;
+            margin-right: 3vw;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__plusTablet {
+        padding-right: 2vh;
+
+        @include desktop {
+            padding-right: 1vh;
+        }
+    }
+    
+    &__imgTablet {
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        object-fit: fill;
+        margin-top: 1vh;
+        display: none;
+
+        @include tablet {
+            margin-top: 0;
+            display: block;
+            margin-left: 3vw;
+        }
+
+        @include desktop {
+            margin-left: 3vw;
+        }
+    }
+
+    &__mobileContainer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__buttonMobile {
+        color: white;
+        background-color: $brainflix;
+        width: 200%;
+        height: 6vh;
+        font-family: Avenir;
+        font-size: 0.825rem;
+        font-weight: 800;
+        border: 3px solid $brainflix;
+        border-radius: 8px;
+        margin-top: 1vh;
+        margin-bottom: 0;
+        margin-right: 2vh;
+        
+    }
+
+    &__plusMobile {
+        padding-right: 2vh;
+    }
+
+    &__imgMobile {
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        object-fit: fill;
+        margin-top: 1vh;
+        margin-left: 33vw;
+    }
+}

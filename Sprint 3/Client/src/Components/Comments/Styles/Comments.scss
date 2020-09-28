@@ -1,0 +1,109 @@
+@import '../../../Styles/global.scss';
+
+.comments {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 0;
+
+    &__img {
+        background-color: grey;
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        margin-top: 1vh;
+        margin-left: 7vw;
+
+        @include desktop {
+            margin-left: 8vw;
+            height: 4vh;
+            width: 6vw;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 74vw;
+        padding-left: 3vw;
+
+        @include tablet {
+            width: 80vw;
+        }
+
+        @include desktop {
+            padding-left: 1vw;
+            width: 90vw;
+        }
+    }
+
+    &__name {
+        font-family: Avenir;
+        color: black;
+        margin: 0;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    &__date {
+        font-family: Avenir;
+        color: grey;
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin: 0;
+
+        @include tablet {
+            margin-right: 55vw;
+        }
+
+        @include desktop {
+            margin-right: 38vw;
+            width: 6vw;
+            display: none;
+        }
+    }
+
+    &__dateDesktop {
+        display: none;
+
+        @include desktop {
+            display: inline;
+            font-family: Avenir;
+            color: grey;
+            font-size: 0.875rem;
+            font-weight: 400;
+            margin: 0;
+            text-align: left;
+            width: 39vw;
+        }
+    }
+
+    &__text {
+        text-align: left;
+        font-family: Avenir;
+        color: grey;
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin: 0;
+        padding-top: 1vh;
+
+        @include desktop {
+            width: 93%;
+            color: black;
+            font-size: 0.9rem;
+        }
+    }
+}
+.comments-divider {
+    width: 86%;
+    color: grey;
+    size: 1px;
+    margin: 2vh 0;
+    margin-left: 7vw;
+
+    @include desktop {
+        margin-left: 8vw;
+        width: 85%;
+        margin-right: 0;
+    }
+}
