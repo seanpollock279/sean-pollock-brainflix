@@ -12,10 +12,6 @@ import CommForm from '../CommForm/CommForm';
 import MediaPlayer from '../MediaPlayer/MediaPlayer';
 import NextVideo from '../NextVideo/NextVideo';
 
-let videos_url ='https://project-2-api.herokuapp.com/videos/?api_key=';
-let api_key = '<fcdda4b1-8a54-4bbe-9edd-7df54c290151>';
-let videosAccess = videos_url + api_key;
-
 class Home extends React.Component {
   state = {
       videos: [
@@ -27,38 +23,49 @@ class Home extends React.Component {
   }
   
   componentDidMount() {
-    axios.get(videosAccess)
+    axios.get('/data')
       .then(res => {
-        axios.get(`https://project-2-api.herokuapp.com/videos/${res.data[0].id}/?api_key=` + api_key)
-          .then(response => {
-              this.setState({
-                videos: res.data,
-                heroVideo: response.data
-              });
-            })
-            .catch(err => {
-              console.log(err);
-            });
-      }
-    )
-  }
-  componentDidUpdate(prevState, prevProps) {
-    const videoId = this.props.match.params.videoId;
-    axios.get(videosAccess)
-      .then(res => {
-        axios.get(`https://project-2-api.herokuapp.com/videos/${videoId}/?api_key=` + api_key)
-          .then(response => {
-              this.setState({
-                videos: res.data,
-                heroVideo: response.data
-              });
-          })
-          .catch(err => {
-            console.log(err);
+        console.log(res);
+          this.setState({
+            videos: res.data.videos,
+            heroVideo: res.data.heroVideo
           });
-      }
-    )
-  }  
+        })
+        .catch(err => {
+          console.log(err);
+        });
+  }
+
+  // addVideo = (e) => {
+  //   e.preventDefault()
+  //   let newVideo = {
+  //     title: e.target.title.value,
+  //     description: e.target.decription.value,
+  //     video: e.target.video.value,
+  //     likes: 5000,
+  //     views: 1000,
+  //     duration: '2:00',
+  //     channel: 'BrainStation Ed'
+  //   }
+
+  //   axios.post('/data', newVideo)
+  //   .then(res => {
+  //     this.setState({videos: res.data})
+  //   })
+  // }
+  // componentDidUpdate(prevState, prevProps) {
+  //   const videoId = this.props.match.params.videoId;
+  //   axios.get('/data')
+  //     .then(res => {
+  //       this.setState({
+  //         videos: res.data,
+  //         heroVideo: res.data.videos.filter(video => video['id'] === videoId)
+  //       });
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+  // }  
   
   render() {
     let hero = this.state.heroVideo;
