@@ -53,19 +53,20 @@ class Home extends React.Component {
   //     this.setState({videos: res.data})
   //   })
   // }
-  // componentDidUpdate(prevState, prevProps) {
-  //   const videoId = this.props.match.params.videoId;
-  //   axios.get('/data')
-  //     .then(res => {
-  //       this.setState({
-  //         videos: res.data,
-  //         heroVideo: res.data.videos.filter(video => video['id'] === videoId)
-  //       });
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //   });
-  // }  
+  componentDidUpdate(prevState, prevProps) {
+    const videoId = this.props.match.params.videoId;
+    axios.get('/data')
+      .then(res => {
+        let newHero = res.data.videos.filter(video => video['id'] === videoId);
+        this.setState({
+          videos: res.data,
+          heroVideo: newHero
+        });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }  
   
   render() {
     let hero = this.state.heroVideo;
