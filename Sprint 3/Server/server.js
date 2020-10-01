@@ -17,18 +17,9 @@ app.get('/data', (req, res) => {
     res.send(data);
 })
 
-// let videoId = data.videos.map(video => {
-//     video.id
-// });
-
-// app.get(`/data/${videoId}`, (req, res) => {
-//     res.send(data);
-// })
-
-// app.get(`/data/${data.videos.id}`, (req, res) => {
-//     res.send(data)
-// })
-
+app.get('/data/:id', (_req, res) => {
+    res.json(data.videos.map(video => video))
+});
 
 // for posting video event
 // app.post('', (req, res) => {

@@ -53,44 +53,49 @@ class Home extends React.Component {
   //     this.setState({videos: res.data})
   //   })
   // }
+
   componentDidUpdate(prevState, prevProps) {
     const videoId = this.props.match.params.videoId;
-    axios.get('/data')
+    console.log(prevProps.videoId)
+    console.log(videoId)
+    if (prevProps.videoId !== videoId) {
+    axios.get('/data/' + videoId)
       .then(res => {
-        let newHero = res.data.videos.filter(video => video['id'] === videoId);
         this.setState({
           videos: res.data,
-          heroVideo: newHero
+          heroVideo: res.data.find(video => video.id === videoId)
         });
     })
     .catch(err => {
       console.log(err);
     });
+  }
   }  
   
   render() {
-    let hero = this.state.heroVideo;
+    const { heroVideo } = this.state;
       return (
+        heroVideo !== undefined &&
         <div className="App">
           <Header />
           <MediaPlayer 
-              videoSrc={hero.image}
-              altText={hero.title}
-              videoLength={hero.duration}
+              videoSrc={heroVideo.image}
+              altText={heroVideo.title}
+              videoLength={heroVideo.duration}
             />
             <div className="container">
               <div className="container__left">
                 <Info 
-                videoTitle={hero.title}
-                videoChannel={hero.channel}
-                videoLikes={hero.likes}
-                videoViews={hero.views}
-                videoDate={hero.timestamp}
+                videoTitle={heroVideo.title}
+                videoChannel={heroVideo.channel}
+                videoLikes={heroVideo.likes}
+                videoViews={heroVideo.views}
+                videoDate={heroVideo.timestamp}
                 />
                 <Description 
-                altText={hero.description}/>
+                altText={heroVideo.description}/>
                 <CommForm />
-                {hero.comments.map(comm => 
+                {heroVideo.comments.map(comm => 
                   <Comments
                   key={comm.commId}
                   userName={comm.name}
@@ -101,7 +106,7 @@ class Home extends React.Component {
               </div>  
               <div className="container__right">
                 <NextVideo />
-                {this.state.videos.filter(video => video.id !== hero.id)
+                {this.state.videos.filter(video => video.id !== heroVideo.id)
                 .map(video => {
                   return <Videos
                     key={video.id}
