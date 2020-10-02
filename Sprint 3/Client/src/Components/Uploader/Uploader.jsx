@@ -7,7 +7,7 @@ import ProfilePic from '../../Assets/Images/Mohan-muruge.jpg';
 import ToUpload from '../../Assets/Images/Upload-video-preview.jpg';
 import './Styles/Uploader.scss';
 
-function Uploader () {
+function Uploader (props) {
     return (
         <div>
             <div className="uploadHeader">
@@ -34,14 +34,16 @@ function Uploader () {
                 <form className="upForm" action="">
                     <label className="upForm__label" htmlFor="title">TITLE YOUR VIDEO</label><br className="upForm__br"/>
                     <input className="upForm__title" type="text" id="title" name="title" placeholder="Add a title to your video" /><br/>
-                    <label className="upForm__labelTwo" htmlFor="description">ADD A VIDEO DESCRIPTION</label><br/>
-                    <textarea className="upForm__description" type="text" id="description" name="description" placeholder="Enter a description for your video" />
+                    <label className="upForm__labelTwo" id="decription" htmlFor="description">ADD A VIDEO DESCRIPTION</label><br/>
+                    <textarea className="upForm__description" type="text" id="description" name="description" placeholder="Enter a description for your video" /><br/>
+                    <label className="upForm__label" htmlFor="video">VIDEO LINK</label>
+                    <input className="upForm__video" type="text" id="video" name="video" placeholder="Add your video link here" />
                 </form>
             </div>
             
             <hr className="uploadDividerBtm" />
             <div className="upFoot">
-                <button className="upFoot__btn">PUBLISH</button>
+                <button onSubmit={props.addVideo} className="upFoot__btn">PUBLISH</button>
                 <h3 className="upFoot__cancel">CANCEL</h3>
             </div>
         </div>

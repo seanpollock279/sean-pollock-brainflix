@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Route, Switch} from 'react-router-dom';
 import '../../App.css';
 import '../../Home.scss';
 import Header from '../Header/Header';
@@ -11,6 +11,7 @@ import Comments from '../Comments/Comments';
 import CommForm from '../CommForm/CommForm';
 import MediaPlayer from '../MediaPlayer/MediaPlayer';
 import NextVideo from '../NextVideo/NextVideo';
+import Uploader from '../Uploader/Uploader';
 
 class Home extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class Home extends React.Component {
   }
   
   componentDidMount() {
-    axios.get('/data')
+    axios.get('/video')
       .then(res => {
         console.log(res);
           this.setState({
@@ -36,30 +37,29 @@ class Home extends React.Component {
         });
   }
 
-  // addVideo = (e) => {
-  //   e.preventDefault()
-  //   let newVideo = {
-  //     title: e.target.title.value,
-  //     description: e.target.decription.value,
-  //     video: e.target.video.value,
-  //     likes: 5000,
-  //     views: 1000,
-  //     duration: '2:00',
-  //     channel: 'BrainStation Ed'
-  //   }
+  addVideo = (e) => {
+    e.preventDefault()
+    let newVideo = {
+      title: e.target.title.value,
+      description: e.target.decription.value,
+      video: e.target.video.value,
+      likes: 5000,
+      views: 1000,
+      duration: '2:00',
+      channel: 'BrainStation Ed',
+      id: 'newVideo001'
+    }
 
-  //   axios.post('/data', newVideo)
-  //   .then(res => {
-  //     this.setState({videos: res.data})
-  //   })
-  // }
+    axios.post('/video', newVideo)
+    .then(res => {
+      this.setState({videos: res.data.videos})
+    })
+  }
 
   componentDidUpdate(prevState, prevProps) {
     const videoId = this.props.match.params.videoId;
-    console.log(prevProps.videoId)
-    console.log(videoId)
     if (prevProps.videoId !== videoId) {
-    axios.get('/data/' + videoId)
+    axios.get('/video/' + videoId)
       .then(res => {
         this.setState({
           videos: res.data,
@@ -76,6 +76,7 @@ class Home extends React.Component {
     const { heroVideo } = this.state;
       return (
         heroVideo !== undefined &&
+        <>
         <div className="App">
           <Header />
           <MediaPlayer 
@@ -120,6 +121,10 @@ class Home extends React.Component {
               </div> 
             </div>  
         </div>
+        <Switch>
+          <Route path="/uploader" addVideo={this.addVideo} component={Uploader} />
+        </Switch>
+        </>
       );
   }
 }

@@ -10,7 +10,6 @@ function App(props) {
         <Switch>
           <Route exact path="/" render={() => <Home />} />
           <Route path="/video/:videoId" render={() => <Home />} />
-          <Route path="/uploader" component={Uploader} />
         </Switch>
     </div>
   )

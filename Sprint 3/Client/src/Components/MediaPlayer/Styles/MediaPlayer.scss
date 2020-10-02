@@ -41,6 +41,11 @@
         max-height: 43.75vh;
         object-fit: cover;
         
+        @include desktop {
+            max-height: 43.5vh;
+            object-fit: cover;
+            min-width: 84%;
+        }
     }
 
     &__containerIcons {
@@ -69,6 +74,7 @@
             left: 16%;
             width: 5%;
             bottom: 3%;
+            height: 9.25%;
         }
     }
 

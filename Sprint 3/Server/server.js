@@ -12,18 +12,29 @@ app.use(bodyParser.json());
 
 console.log(data);
 
-app.get('/data', (req, res) => {
-    // res.json(data);
+app.get('/video', (req, res) => {
     res.send(data);
 })
 
-app.get('/data/:id', (_req, res) => {
+app.get('/video/:id', (_req, res) => {
     res.json(data.videos.map(video => video))
 });
 
-// for posting video event
-// app.post('', (req, res) => {
-    
-// })
+app.post('/video', (_req, res) => {
+    const { title, description, video, likes, views, duration, channel, id } = req.body 
+    res.json([
+        ...data,
+        {
+            title,
+            description,
+            video,
+            likes,
+            views,
+            duration,
+            channel,
+            id
+        }
+    ])
+})
 
 app.listen(port, () => console.log(`Listening on ${port}`))
