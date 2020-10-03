@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {withRouter, Route, Switch} from 'react-router-dom';
+import {withRouter, Route, Switch, Router} from 'react-router-dom';
 import '../../App.css';
 import '../../Home.scss';
 import Header from '../Header/Header';
@@ -122,7 +122,7 @@ class Home extends React.Component {
             </div>  
         </div>
         <Switch>
-          <Route path="/uploader" addVideo={this.addVideo} component={Uploader} />
+          <Route exact path="/uploader" render={() => <Uploader addVideo={this.addVideo} />} />
         </Switch>
         </>
       );
