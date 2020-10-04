@@ -47,6 +47,7 @@ class App extends React.Component {
       image: this.state.newVideo.video,
       likes: 5000,
       views: 1000,
+      timestamp: 1545162149000,
       duration: '2:00',
       channel: 'BrainStation Ed',
       id: 'newVideo001',
