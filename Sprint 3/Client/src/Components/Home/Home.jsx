@@ -12,7 +12,6 @@ import NextVideo from '../NextVideo/NextVideo';
 
 function Home ({ homeProps }) {
   const { heroVideo, videos } = homeProps;
-  console.log(videos)
       return (
         heroVideo !== undefined &&
         <>

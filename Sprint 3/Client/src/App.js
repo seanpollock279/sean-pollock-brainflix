@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter,Route, Link, Switch} from 'react-router-dom';
+import {withRouter, useHistory} from 'react-router-dom';
 import './App.css';
 import Uploader from './Components/Uploader/Uploader';
 import Home from './Components/Home/Home';
@@ -19,15 +19,12 @@ class App extends React.Component {
       title: '',
       description: '',
       video: ''
-    },
-    triggered: false
+    }
   }
 
   componentDidMount() {
-    console.log(this.state)
     axios.get('/video')
       .then(res => {
-        console.log(res);
           this.setState({
             videos: res.data.videos,
             heroVideo: res.data.heroVideo
@@ -47,7 +44,7 @@ class App extends React.Component {
     let newVideo = {
       title: this.state.newVideo.title,
       description: this.state.newVideo.description,
-      video: this.state.newVideo.video,
+      image: this.state.newVideo.video,
       likes: 5000,
       views: 1000,
       duration: '2:00',
@@ -76,22 +73,22 @@ class App extends React.Component {
           "timestamp": 1542262984046
         }]
     }
-    console.log(newVideo)
-    
     axios.post('http://localhost:8080/video', newVideo)
     .then(res => {
-      console.log(res)
       this.setState({videos: res.data.videos})
+      this.props.history.push('/');
+      window.location.reload();
     })
+
   }
 
   updateState = () => {
-    const videoId = this.props.match.params.videoId;
-    axios.get('http://localhost:8080/video/' + videoId)
+    const videoId = this.props.location.pathname;
+    axios.get('http://localhost:8080/video/' + videoId.slice(7))
           .then(res => {
             this.setState({
               videos: res.data,
-              heroVideo: res.data.find(video => video.id === videoId)
+              heroVideo: res.data.find(video => video.id === videoId.slice(7))
             });
         })
         .catch(err => {
@@ -100,19 +97,16 @@ class App extends React.Component {
   }
   
   componentDidUpdate(prevProps, prevState) {
-    const videoId = this.props.match.params.videoId;
-    console.log("component updated")
-    console.log(prevState)
-    console.log(this.state.heroVideo)
-      // if (prevProps.heroVideo.id !== videoId) {
-        this.setState({triggered: true})
-      // }
+    const videoId = this.props.location.pathname;
+      if (prevProps.location.pathname !== videoId) {
+        this.updateState();
+      }
   }  
 
   render() {
-    console.log(this.state.triggered)
+    console.log(this.state)
     return (
-      <Router state={this.state} addVideo={this.addVideo} onChange={this.onChange}/>
+      <Router state={this.state} addVideo={this.addVideo} onChange={this.onChange} appProps={this.props}/>
     )
   }
 }

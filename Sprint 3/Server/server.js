@@ -24,11 +24,11 @@ app.get('/video/:id', (_req, res) => {
 });
 
 app.post('/video', (req, res) => {
-    const { title, description, video, likes, views, duration, channel, id, comments } = req.body 
+    const { title, description, image, likes, views, duration, channel, id, comments } = req.body 
     const newVideo = {
         title,
         description,
-        video,
+        image,
         likes,
         views,
         duration, 
