@@ -33,17 +33,17 @@ function Uploader (props) {
                 </div>
                 <form className="upForm" action="">
                     <label className="upForm__label" htmlFor="title">TITLE YOUR VIDEO</label><br className="upForm__br"/>
-                    <input className="upForm__title" type="text" id="title" name="title" placeholder="Add a title to your video" /><br/>
-                    <label className="upForm__labelTwo" id="decription" htmlFor="description">ADD A VIDEO DESCRIPTION</label><br/>
-                    <textarea className="upForm__description" type="text" id="description" name="description" placeholder="Enter a description for your video" /><br/>
+                    <input className="upForm__title" type="text" onChange={props.onChange} value={props.newVideo.title} name="title" placeholder="Add a title to your video" /><br/>
+                    <label className="upForm__labelTwo" id="description" htmlFor="description">ADD A VIDEO DESCRIPTION</label><br/>
+                    <textarea className="upForm__description" type="text" onChange={props.onChange} value={props.newVideo.description} name="description" placeholder="Enter a description for your video" /><br/>
                     <label className="upForm__label" htmlFor="video">VIDEO LINK</label>
-                    <input className="upForm__video" type="text" id="video" name="video" placeholder="Add your video link here" />
+                    <input className="upForm__video" type="text" onChange={props.onChange} value={props.newVideo.video} name="video" placeholder="Add your video link here" />
                 </form>
             </div>
             
             <hr className="uploadDividerBtm" />
             <div className="upFoot">
-                <button onSubmit={props.addVideo} className="upFoot__btn">PUBLISH</button>
+                <button onClick={props.addVideo} className="upFoot__btn">PUBLISH</button>
                 <h3 className="upFoot__cancel">CANCEL</h3>
             </div>
         </div>

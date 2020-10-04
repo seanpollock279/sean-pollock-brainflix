@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import {withRouter, Route, Switch, Router} from 'react-router-dom';
 import '../../App.css';
 import '../../Home.scss';
 import Header from '../Header/Header';
@@ -11,69 +9,10 @@ import Comments from '../Comments/Comments';
 import CommForm from '../CommForm/CommForm';
 import MediaPlayer from '../MediaPlayer/MediaPlayer';
 import NextVideo from '../NextVideo/NextVideo';
-import Uploader from '../Uploader/Uploader';
 
-class Home extends React.Component {
-  state = {
-      videos: [
-        "Loading..."
-      ],
-      heroVideo: {
-        comments: ['Loading...']
-      }
-  }
-  
-  componentDidMount() {
-    axios.get('/video')
-      .then(res => {
-        console.log(res);
-          this.setState({
-            videos: res.data.videos,
-            heroVideo: res.data.heroVideo
-          });
-        })
-        .catch(err => {
-          console.log(err);
-        });
-  }
-
-  addVideo = (e) => {
-    e.preventDefault()
-    let newVideo = {
-      title: e.target.title.value,
-      description: e.target.decription.value,
-      video: e.target.video.value,
-      likes: 5000,
-      views: 1000,
-      duration: '2:00',
-      channel: 'BrainStation Ed',
-      id: 'newVideo001'
-    }
-
-    axios.post('/video', newVideo)
-    .then(res => {
-      this.setState({videos: res.data.videos})
-    })
-  }
-
-  componentDidUpdate(prevState, prevProps) {
-    const videoId = this.props.match.params.videoId;
-    if (prevProps.videoId !== videoId) {
-    axios.get('/video/' + videoId)
-      .then(res => {
-        this.setState({
-          videos: res.data,
-          heroVideo: res.data.find(video => video.id === videoId)
-        });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
-  }  
-  
-  render() {
-    const { heroVideo } = this.state;
+function Home ({ homeProps }) {
+  const { heroVideo, videos } = homeProps;
+  console.log(videos)
       return (
         heroVideo !== undefined &&
         <>
@@ -107,7 +46,7 @@ class Home extends React.Component {
               </div>  
               <div className="container__right">
                 <NextVideo />
-                {this.state.videos.filter(video => video.id !== heroVideo.id)
+                {videos.filter(video => video.id !== heroVideo.id)
                 .map(video => {
                   return <Videos
                     key={video.id}
@@ -121,14 +60,10 @@ class Home extends React.Component {
               </div> 
             </div>  
         </div>
-        <Switch>
-          <Route exact path="/uploader" render={() => <Uploader addVideo={this.addVideo} />} />
-        </Switch>
         </>
       );
-  }
 }
 
   
 
-export default withRouter(Home);
+export default Home;

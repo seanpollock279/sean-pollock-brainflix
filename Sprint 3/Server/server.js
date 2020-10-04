@@ -3,11 +3,14 @@ const app = express();
 const port = process.env.PORT || process.argv[2] || 8080
 const bodyParser = require('body-parser');
 const data = require('./data.json');
+const cors = require('cors');
 
 require('dotenv').config();
 
-
+app.use(cors());
+app.options('*', cors());
 app.use(bodyParser.json());
+
 // app.use(bodyParser.urlencoded({ extended: true}));
 
 console.log(data);
@@ -20,21 +23,25 @@ app.get('/video/:id', (_req, res) => {
     res.json(data.videos.map(video => video))
 });
 
-app.post('/video', (_req, res) => {
-    const { title, description, video, likes, views, duration, channel, id } = req.body 
+app.post('/video', (req, res) => {
+    const { title, description, video, likes, views, duration, channel, id, comments } = req.body 
+    const newVideo = {
+        title,
+        description,
+        video,
+        likes,
+        views,
+        duration, 
+        channel,
+        id,
+        comments
+    }
     res.json([
-        ...data,
-        {
-            title,
-            description,
-            video,
-            likes,
-            views,
-            duration,
-            channel,
-            id
-        }
+        data.videos,
+        newVideo
     ])
+    data.videos.push(newVideo);
+    console.log(req.body)
 })
 
 app.listen(port, () => console.log(`Listening on ${port}`))
