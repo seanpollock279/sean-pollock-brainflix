@@ -1,0 +1,7 @@
+{
+    "homepage": "https://seanpollock279.github.io/sean-pollock-brainflix/",
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    }
+}
