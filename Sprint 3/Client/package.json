@@ -1,4 +1,5 @@
 {
+  "homepage": "https://seanpollock279.github.io/sean-pollock-brainflix/",
   "name": "sean-pollock-brainflix",
   "proxy": "http://localhost:8080/",
   "version": "0.1.0",
@@ -15,6 +16,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
